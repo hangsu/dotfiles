@@ -2,7 +2,8 @@
 set nocompatible
 
 " ADDONS
-filetype off                   " required!
+" required for vundle
+filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
@@ -11,19 +12,21 @@ Bundle 'kien/ctrlp.vim'
 
 " BASIC
 set hidden
-set backup
-set history=10000
-set showcmd
+set history=100
 set cursorline
 set switchbuf=useopen
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
-set showmatch
 set laststatus=2
+set ruler
 set wildmenu
 set scrolloff=3
-set ttimeout ttimeoutlen=50
 set winwidth=79
 syntax enable
+
+" BACKUP
+set backup
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swp//
 
 " SEARCH
 set incsearch
@@ -44,17 +47,15 @@ filetype plugin indent on
 let mapleader=","
 map Y y$
 nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
-inoremap <C-U> <C-G>u<C-U>
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
+" allows undo of insert mode ctrl-u & ctrl-w
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
 
 " AUTOCOMMANDS
 augroup vimrcEx
   autocmd!
-
   autocmd FileType text setlocal textwidth=78
+  
   " When editing a file, always jump to the last known cursor position.
   autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
