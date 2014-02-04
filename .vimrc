@@ -23,6 +23,10 @@ set scrolloff=3
 set winwidth=79
 syntax enable
 
+" NETRW
+let g:netrw_liststyle=3
+let g:netrw_preview=1
+
 " BACKUP
 set backup
 set backupdir=~/.vim/backup//
