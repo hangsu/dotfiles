@@ -1,14 +1,17 @@
-" This must be first, because it changes other options as a side effect.
+" This must be first because it changes other options as a side effect.
 set nocompatible
 
-" ADDONS
+""" ADDONS """
+""""""""""""""
 " required for vundle
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'kien/ctrlp.vim'
+Plugin 'gmarik/vundle'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/ctrlp.vim'
+Plugin 'thoughtbot/vim-rspec'
+filetype plugin indent on
 
 " BASIC
 set hidden
@@ -34,6 +37,7 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swp//
 
 " SEARCH
+set grepprg=ack\ -k
 set incsearch
 set hlsearch
 set ignorecase smartcase " make searches case-sensitive only if they contain upper-case characters
@@ -46,7 +50,6 @@ set expandtab
 set smarttab
 set shiftround
 set autoindent
-filetype plugin indent on
 
 " MAPPINGS
 let mapleader=","
@@ -72,3 +75,9 @@ augroup END
 " SOLARIZED
 set background=dark
 colorscheme solarized
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
