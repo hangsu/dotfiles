@@ -4,3 +4,4 @@
 # Except...
 !.vimrc
 !.ackrc
+!.tmux.conf
