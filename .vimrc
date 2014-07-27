@@ -3,14 +3,12 @@ set nocompatible
 
 """ ADDONS """
 """"""""""""""
-" required for vundle
-filetype off
+filetype off " required for vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
-Plugin 'thoughtbot/vim-rspec'
 filetype plugin indent on
 
 " BASIC
@@ -24,6 +22,10 @@ set ruler
 set wildmenu
 set scrolloff=3
 set winwidth=79
+
+" toggles cursor line hilighting upon switching modes
+autocmd InsertEnter * set nocul
+autocmd InsertLeave * set cul
 syntax enable
 
 " NETRW
@@ -75,9 +77,3 @@ augroup END
 " SOLARIZED
 set background=dark
 colorscheme solarized
-
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
