@@ -52,6 +52,7 @@ set expandtab
 set smarttab
 set shiftround
 set autoindent
+set breakindent
 
 " MAPPINGS
 let mapleader=","
