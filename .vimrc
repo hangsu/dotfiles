@@ -23,6 +23,9 @@ set wildmenu
 set scrolloff=3
 set winwidth=79
 
+" COMMENTS
+set formatoptions-=cro " disable auto-commenting in new line
+
 " toggles cursor line hilighting upon switching modes
 autocmd InsertEnter * set nocul
 autocmd InsertLeave * set cul
