@@ -9,6 +9,7 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-eunuch'
 filetype plugin indent on
 
 " BASIC
