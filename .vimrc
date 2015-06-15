@@ -9,7 +9,7 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-surround'
 filetype plugin indent on
 
 " BASIC
@@ -25,7 +25,7 @@ set scrolloff=3
 set winwidth=79
 
 " COMMENTS
-set formatoptions-=cro " disable auto-commenting in new line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " disable auto-commenting in new line
 
 " toggles cursor line hilighting upon switching modes
 autocmd InsertEnter * set nocul
