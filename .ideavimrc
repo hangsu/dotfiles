@@ -1,0 +1,53 @@
+"-------------------------------------------
+" MAPPINGS
+"-------------------------------------------
+
+let mapleader = ','
+" using map for showcmd
+map <Space> <Leader>
+
+" map Y to behave like C and D
+nnoremap Y y$ 
+
+" clear search highlight
+nnoremap <silent> <CR> :nohl<CR>
+
+" window management
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" fuzzy file finder
+nnoremap <C-p> :action GotoFile<CR>
+
+" file explorer
+nnoremap <Leader>e :action ActivateProjectToolWindow<CR>
+nnoremap <Leader>E :action SelectInProjectView<CR>
+
+" edit vimrc
+nnoremap <Leader>, :e ~/.ideavimrc<CR>
+
+" indent file
+nnoremap <Leader>= :action ReformatCode<CR>
+
+" rename file
+nnoremap <Leader>r :action RenameFile<CR>
+
+
+"-------------------------------------------
+" SETTINGS
+"-------------------------------------------
+
+" enable surround plugin
+set surround
+
+" basic
+set history=1000
+set scrolloff=10
+set sidescrolloff=10
+
+" search
+set incsearch
+set hlsearch
+set ignorecase smartcase

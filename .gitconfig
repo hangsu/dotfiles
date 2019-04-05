@@ -1,13 +1,7 @@
 [credential]
   helper = osxkeychain
 [user]
-  name = hangsu
+	name = Hang Su
   email = hang@mushilabs.com
 [core]
-  editor = mvim -v
-[difftool]
-  prompt = false
-[diff]
-    tool = mvimdiff
-[difftool "mvimdiff"]
-    cmd = mvim -f -d \"$LOCAL\" \"$REMOTE\"
+	editor = "mvim -f"
