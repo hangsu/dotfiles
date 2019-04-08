@@ -2,7 +2,7 @@ source ~/.bashrc
 
 eval "$(rbenv init -)"
 
-export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 export PATH="/Applications/MacVim.app/Contents/bin:$PATH"
 
